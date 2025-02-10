@@ -51,7 +51,6 @@ export const Filters: FC<Props> = ({ className }) => {
         </div>
         
         <CheckboxFiltersGroup title={''} items={pizzaIngredients} defaultItems={[]} limit={5}/>
-
     </div>
   );
 };
