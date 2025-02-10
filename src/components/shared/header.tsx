@@ -4,6 +4,7 @@ import { Container } from './container';
 import Image from 'next/image';
 import { Button } from '../ui';
 import { ArrowRight, ShoppingCart, User } from 'lucide-react';
+import { AnimatedLogo } from './animatedLogo';
 
 interface Props {
   className?: string;
@@ -13,15 +14,7 @@ export const Header: FC<Props> = ({ className }) => {
   return (
     <header className={cn('border border-b', className)}>
         <Container className='flex items-center justify-between py-8'>
-            <div className='flex items-center gap-3'>
-                <div>
-                    <h1 className='text-2xl uppercase font-black text-gray-800'>CHERRY BAR</h1>
-                    <span className='font-amatic text-2xl'>Вкусно вишенке собаке</span>
-                </div>
-                <div>
-                    <Image src={'/westie.png'} alt='logo' width={55} height={55}/>
-                </div>
-            </div>
+            <AnimatedLogo />
 
             <div className='flex items-center gap-3 mx-4'>
                 <Button variant="outline" className='flex items-center gap-1'> <User /> Войти </Button>

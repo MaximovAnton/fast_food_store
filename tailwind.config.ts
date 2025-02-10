@@ -59,7 +59,45 @@ export default {
 		fontFamily: {
 			amatic: ['"Amatic SC"', 'cursive'], 
 		},
-  	}
+		keyframes: {
+			mainBlock: {
+			  "0%": { width: "0%", left: "0" },
+			  "50%": { width: "70%", left: "0" },
+			  "100%": { width: "0", left: "70%" },
+			},
+			secBlock: {
+			  "0%": { width: "0%", left: "0" },
+			  "50%": { width: "72%", left: "0" },
+			  "100%": { width: "0", left: "72%" },
+			},
+			mainFadeIn: {
+			  "0%": { opacity: "0" },
+			  "100%": { opacity: "1" },
+			},
+			secFadeIn: {
+				"0%": { opacity: "0" },
+				"100%": { opacity: "1" },
+			},
+			popIn: {
+			  "0%": { width: "0px", height: "0px", opacity: "0" },
+			  "50%": { width: "10px", height: "10px", opacity: "1", bottom: "15px" },
+			  "100%": { width: "7px", height: "7px", bottom: "-5.5px" },
+			},
+			fall: {
+				'0%': { top: '-100px', opacity: '0', transform: 'rotate(180deg)' },
+				'70%': {opacity: '0'},
+				'100%': { top: '20px', opacity: '1', transform: 'rotate(10deg)' },
+			},
+		},
+		animation: {
+			mainBlock: "mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards",
+			secBlock: "secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards 1.9s",
+			mainFadeIn: "mainFadeIn 1.5s forwards 1.6s",
+			popIn: "popIn 1.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards 2.5s",
+			secFadeIn: "secFadeIn 2s forwards 3s",
+			fall: 'fall 3.5s ease-in forwards',
+		},
+	},
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
